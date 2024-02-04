@@ -1,0 +1,4 @@
+av/
+.vscode/
+build/
+__pycache__
