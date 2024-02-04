@@ -11,9 +11,12 @@
 def transacao():
     
     import pyautogui
-    import time    
+    import fun
     
-    time.sleep(2)
+    # Maximizar janela SAP 
+    fun.verificar_e_maximizar_janela('SAP Easy Access')
+    
+    # time.sleep(2)
     pyautogui.write('FBL3N')
     pyautogui.press('enter')
     
@@ -34,6 +37,10 @@ def transacao():
 def chamar_variante():
     
     import pyautogui
+    import fun
+    
+    # Maximizar janela SAP 
+    fun.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
     
     pyautogui.hotkey('shift', 'f5')
     pyautogui.write('/FL DIARIO')
@@ -57,11 +64,20 @@ def chamar_variante():
 
 
 
+
+
+
+
+
 ### Passo 1 - Emitir Razao Bancos ###
 def emitir_bancos(empresa, data_inicio, data_fim):
 
     import pyautogui
     import time
+    import fun
+    
+    # Maximizar janela SAP 
+    fun.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
     
     pyautogui.hotkey('shift', 'f4')
     for _ in range(2): pyautogui.hotkey('tab')
@@ -80,9 +96,10 @@ def emitir_bancos(empresa, data_inicio, data_fim):
     pyautogui.hotkey('tab')
     pyautogui.write(data_fim)
     pyautogui.press('f8')
-    time.sleep(3)
+    time.sleep(5)   # tempo para relatório abrir no SAP
     
     print('Bancos OK!')
+    
 
 
 
@@ -92,15 +109,15 @@ def emitir_bancos(empresa, data_inicio, data_fim):
 
 
 
-
-def emitir_contrapartida_bancos(empresa, data_inicio, data_fim, nova_pasta):
+### Passo 2 - Emitir Contrapartida Bancos ###
+def emitir_contrapartida_bancos(empresa, data_inicio, data_fim, novo_diretorio):
 
     import pyautogui
     import pyperclip
     import time
     import fun
     
-    num_documento = fun.dados_contrapartida_bancos(nova_pasta)
+    num_documento = fun.dados_contrapartida_bancos(novo_diretorio)
     # pyautogui.press('win')
     # pyautogui.write('bloco de notas')
     # pyautogui.press('enter')

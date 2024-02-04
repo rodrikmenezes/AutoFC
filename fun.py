@@ -138,11 +138,15 @@ def obter_dados_sap():
 
 
 ### Salvar Arquivo ###
-def salvar_arquivo(nova_pasta, nome_pasta):
+def salvar_arquivo(novo_diretorio, nome_pasta):
     
     import pyautogui
     import pyperclip
     import time
+    import fun
+    
+    # Maximizar janela Relatório de partidas individuais contas do Razão
+    fun.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
     
     pyautogui.hotkey('alt')
     pyautogui.write('x')
@@ -151,7 +155,7 @@ def salvar_arquivo(nova_pasta, nome_pasta):
     pyautogui.write(nome_pasta)
     for _ in range(6): pyautogui.hotkey('tab')
     pyautogui.hotkey('enter')
-    pyperclip.copy(nova_pasta)
+    pyperclip.copy(novo_diretorio)
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.hotkey('enter')
     for _ in range(9): pyautogui.hotkey('tab')
@@ -159,9 +163,14 @@ def salvar_arquivo(nova_pasta, nome_pasta):
     time.sleep(3)
     for _ in range(4): pyautogui.hotkey('tab')
     pyautogui.hotkey('enter')
-    time.sleep(5)
+    time.sleep(8)   # tempo para arquivo excel abrir
+    
+    # Maximizar e fechar janela 1 Bancos - Excel
+    fun.verificar_e_maximizar_janela(nome_pasta)
+    pyautogui.hotkey('alt', 'f4')
     
     print('Salvar Arquivo OK!')
+    
 
 
 
@@ -233,7 +242,7 @@ def verificar_e_maximizar_janela(titulo_janela):
     import sys
     import time
     
-    time.sleep(4)
+    time.sleep(2)
     janelas = pygetwindow.getWindowsWithTitle(titulo_janela)
     if janelas:
         janela = janelas[0]

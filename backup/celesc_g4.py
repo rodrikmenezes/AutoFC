@@ -32,7 +32,7 @@ ano = 2023
 mes = 12
 data_inicio, data_fim = fun.calcular_datas(mes, ano)
 pasta = str(ano) + '.' + str(mes)
-nova_pasta = fun.criar_diretorio(diretorio, pasta)
+novo_diretorio = fun.criar_diretorio(diretorio, pasta)
 
 
 
@@ -55,7 +55,7 @@ gui.emitir_bancos(empresa, data_inicio, data_fim)
 fun.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
 
 # Salvar Relatorio Bancos
-fun.salvar_arquivo(nova_pasta, '1 Bancos')
+fun.salvar_arquivo(novo_diretorio, '1 Bancos')
 
 # Maximizar e fechar janela 1 Bancos - Excel
 fun.verificar_e_maximizar_janela('1 Bancos - Excel')
@@ -78,10 +78,10 @@ gui.transacao()
 gui.chamar_variante()
 
 # Emitir Contrapartida Bancos
-gui.emitir_contrapartida_bancos(empresa, data_inicio, data_fim, nova_pasta)
+gui.emitir_contrapartida_bancos(empresa, data_inicio, data_fim, novo_diretorio)
 
 # Salvar Contrapartida Bancos
-fun.salvar_arquivo(nova_pasta, '2 Contrapartida Bancos')
+fun.salvar_arquivo(novo_diretorio, '2 Contrapartida Bancos')
 
 # Maximizar e fechar janela 2 Contrapartida Bancos - Excel
 fun.verificar_e_maximizar_janela('2 Contrapartida Bancos - Excel')

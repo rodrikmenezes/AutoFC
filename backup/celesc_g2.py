@@ -41,7 +41,7 @@ ano = 2023
 mes = 12
 data_inicio, data_fim = fun.calcular_datas(mes, ano)
 pasta = str(ano) + '.' + str(mes)
-nova_pasta = fun.criar_diretorio(diretorio, pasta)
+novo_diretorio = fun.criar_diretorio(diretorio, pasta)
 
 
 
@@ -134,7 +134,7 @@ pyautogui.hotkey('tab')
 pyautogui.hotkey('tab')
 pyautogui.hotkey('tab')
 pyautogui.hotkey('enter')
-pyperclip.copy(nova_pasta)
+pyperclip.copy(novo_diretorio)
 pyautogui.hotkey('ctrl', 'v')
 pyautogui.hotkey('enter')
 pyautogui.hotkey('tab')
@@ -179,7 +179,7 @@ pyautogui.press('win')
 pyautogui.write('bloco de notas')
 pyautogui.press('enter')
 pyautogui.hotkey('win','up')
-fun.contrapartida_bancos(nova_pasta)
+fun.contrapartida_bancos(novo_diretorio)
 pyautogui.hotkey('ctrl', 'v')
 pyautogui.hotkey('ctrl', 'a')
 pyautogui.hotkey('ctrl', 'c')   # copiar para área de transferência
