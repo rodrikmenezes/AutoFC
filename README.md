@@ -11,5 +11,6 @@ Este projeto automatiza o processo mensal de realização do fluxo de caixa
 
 ## Notas:
 ### Gravar programa:
->>> pyinstaller -onefile meu_programa.py
+* pyinstaller -onefile meu_programa.py
+
 
