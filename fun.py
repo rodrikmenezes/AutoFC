@@ -20,7 +20,7 @@ def dados_contrapartida_bancos(diretorio):
     import pandas
     
     # Nome do arquivo a ser importado
-    arquivo = diretorio + '\\1 Bancos.XLSX'
+    arquivo = f"{diretorio}\\1 Bancos.XLSX"
     
     # Importar planilha
     planilha = pandas.read_excel(arquivo)

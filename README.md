@@ -11,9 +11,13 @@ Este projeto automatiza o processo mensal de realização do fluxo de caixa
 
 ## Notas:
 ### Gravar programa:
-* pyinstaller --onefile programa.py
+pyinstaller --onefile programa.py
 ### Converter .ipynb para .py
-* jupyter nbconvert --to script arquivo.ipynb
+jupyter nbconvert --to script arquivo.ipynb
+### Iniciar Pandas GUI
+from pandasgui import show
+show()
+
 
 
 

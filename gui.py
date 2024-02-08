@@ -465,7 +465,15 @@ def emitir_contrapartida_bancos(empresa, data_inicio, data_fim, novo_diretorio, 
     gui.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
     
     pyautogui.hotkey('shift', 'f4')
+    pyautogui.hotkey('shift', 'tab')
+    pyautogui.hotkey('enter')
     pyautogui.PAUSE = tempo_fim
+    num_documento = fun.dados_contrapartida_bancos(novo_diretorio)
+    gui.copiar_dados(num_documento)
+    gui.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
+    pyautogui.hotkey('enter')           # ativar tela
+    pyautogui.hotkey('shift', 'f12')    # colar valores
+    pyautogui.hotkey('f8')
     for _ in range(2): pyautogui.hotkey('tab')
     pyautogui.hotkey('enter')
     pyautogui.hotkey('shift', 'f4')
@@ -485,15 +493,7 @@ def emitir_contrapartida_bancos(empresa, data_inicio, data_fim, novo_diretorio, 
     pyautogui.write(data_inicio)
     pyautogui.hotkey('tab')
     pyautogui.write(data_fim)
-    for _ in range(17): pyautogui.hotkey('shift', 'tab')
-    pyautogui.hotkey('enter')
     pyautogui.PAUSE = tempo_inicial
-    num_documento = fun.dados_contrapartida_bancos(novo_diretorio)
-    gui.copiar_dados(num_documento)
-    gui.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
-    pyautogui.hotkey('enter')           # ativar tela
-    pyautogui.hotkey('shift', 'f12')    # colar valores
-    pyautogui.hotkey('f8')
     pyautogui.hotkey('f8')
     time.sleep(tempo_contrap_bancos)
 
