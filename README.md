@@ -11,6 +11,9 @@ Este projeto automatiza o processo mensal de realização do fluxo de caixa
 
 ## Notas:
 ### Gravar programa:
-* pyinstaller -onefile meu_programa.py
+* pyinstaller --onefile programa.py
+### Converter .ipynb para .py
+* jupyter nbconvert --to script arquivo.ipynb
+
 
 

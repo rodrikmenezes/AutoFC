@@ -61,7 +61,7 @@ fun.salvar_arquivo(novo_diretorio, '1 Bancos')
 fun.verificar_e_maximizar_janela('1 Bancos - Excel')
 pyautogui.hotkey('alt', 'f4')
 
-# Maximizar janela Relatório de partidas individuais contas do Razão
+# Maximizar e sair da janela Relatório de partidas individuais contas do Razão
 fun.verificar_e_maximizar_janela('Relatório de partidas individuais contas do Razão')
 pyautogui.hotkey('esc')
 
